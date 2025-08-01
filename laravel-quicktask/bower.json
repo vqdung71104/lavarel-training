@@ -1,0 +1,18 @@
+{
+  "name": "laravel-quicktask",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Vu Quang Dung <vuquangdung71104@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vqdung71104/lavarel-training",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
