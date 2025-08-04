@@ -15,6 +15,7 @@
                                 <th class="text-gray-900 dark:text-gray-100 px-4 py-2" scope="col">#</th>
                                 <th class="text-gray-900 dark:text-gray-100 px-4 py-2" scope="col">Name</th>
                                 <th class="text-gray-900 dark:text-gray-100 px-4 py-2" scope="col">Username</th>
+                                <th class="text-gray-900 dark:text-gray-100 px-4 py-2" scope="col">Tasks</th>
                                 <th class="text-gray-900 dark:text-gray-100 px-4 py-2" scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -24,6 +25,11 @@
                                     <td class="text-gray-900 dark:text-gray-100 px-4 py-2 text-center">{{ $loop->iteration }}</td>
                                     <td class="text-gray-900 dark:text-gray-100 px-4 py-2 text-center">{{ $user->name }}</td>
                                     <td class="text-gray-900 dark:text-gray-100 px-4 py-2 text-center">{{ $user->username }}</td>
+                                    <td class="text-gray-900 dark:text-gray-100 px-4 py-2 text-center">
+                                        @foreach ($user->tasks as $task)
+                                            <div>{{ $task->title }}</div>
+                                        @endforeach
+                                    </td>
                                     <td class="text-gray-900 dark:text-gray-100 px-4 py-2 text-center">
                                         <x-primary-button class="mt-4">
                                             {{ __("Create") }}
