@@ -1,0 +1,22 @@
+// resources/scss/app.scss
+
+// Import Tailwind (giữ nguyên cấu trúc hiện có)
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Custom SCSS đơn giản (không ảnh hưởng logic hiện có)
+body {
+    font-family: 'Figtree', sans-serif;
+    @apply antialiased;
+}
+
+// Animation cơ bản
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
