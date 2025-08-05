@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class UserController extends Controller
 {
@@ -14,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         return view('users.index', [
-            'users' => User::all(),
+            'users' => User::with('tasks')->get(),
         ]);
     }
 
@@ -56,8 +58,16 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->username = $request->username;
-        $user->email = $request->email;
+        //user->email = $request->email;
         $user->save();
+        //DB::table('users')->where('id', $user->id)->update([
+        //    'username' => $request->username,
+        //    'email' => $request->email,
+        //]);
+        //User::where('id', $user->id)
+        //->update([
+        //    'username' => $request->username,
+        //]);
         return back();
     }
 
